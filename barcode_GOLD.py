@@ -1,15 +1,15 @@
 #!/usr/bin/python
 
 import sys, time
-import RPi.GPIO as GPIO
+import RPi.GPIO as GPIO #import GPIO for LED's
 from datetime import datetime
-import requests, gspread
+import requests, gspread #import gspread API to communicate with Google Sheets
 sys.path.append('/usr/lib/python2.7/dist-packages')
 from oauth2client.client import SignedJwtAssertionCredentials
 
-errflag = 0
-valid = 'Student %r: Present on '
-invalid = 'Invalid ID Number: %s - '
+errflag = 0 #set variable of invalid ids or errors to zero
+valid = 'Student %r: Present on ' #message returned on pi for a valid sudent id
+invalid = 'Invalid ID Number: %s - ' #message returned on pi for an invalid student id
 
 
 def authenticate_google_docs():
