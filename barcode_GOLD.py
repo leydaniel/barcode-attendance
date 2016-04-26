@@ -45,8 +45,8 @@ while True: #start of infinite loop
 	timex = str(now.hour) + ":" + str(now.minute) + ":" + str(now.second) #establish time as a string
 	if  barcode.strip() == 'stop': #stop the program with the word stop
 		break 
-	else:
-		if len(barcode) != 6 or \ #barcode validation
+	else: #begin barcode validation
+		if len(barcode) != 6 or \ 
 		barcode[2] != '0' or \
 		barcode[0:2] not in ['16','17','18','19']:
 			errflag = errflag + 1 #count invalid ids
